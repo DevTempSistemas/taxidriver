@@ -13,7 +13,8 @@ namespace taxidriver.Presentacion
 {
     public partial class frmLogin : Form
     {
-        Usuario _objUsuario = new Usuario();
+        //Controladores.Usuario _objUsuario = new Controladores.Usuario();
+        UsuarioController _objUsuarioC = new UsuarioController();
 
         public frmLogin()
         {
@@ -22,10 +23,20 @@ namespace taxidriver.Presentacion
 
         private void btnAceptar_Click(object sender, EventArgs e)
         {
-            if (_objUsuario.AutenticarUsuario(txtCuenta.Text, txtClave.Text))
-                MessageBox.Show("OK");
+            //if (_objUsuario.AutenticarUsuario(txtCuenta.Text, txtClave.Text))
+            if (_objUsuarioC.Login(txtCuenta.Text, txtClave.Text))
+            {
+                frmUsuario frm = new frmUsuario();
+                frm.ShowDialog();
+            }
+            //MessageBox.Show("OK");
             else
-                MessageBox.Show("No OK");
+                MessageBox.Show("NO OK");
+        }
+
+        private void frmLogin_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

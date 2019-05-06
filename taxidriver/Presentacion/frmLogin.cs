@@ -21,22 +21,30 @@ namespace taxidriver.Presentacion
             InitializeComponent();
         }
 
-        private void btnAceptar_Click(object sender, EventArgs e)
-        {
-            //if (_objUsuario.AutenticarUsuario(txtCuenta.Text, txtClave.Text))
-            if (_objUsuarioC.Login(txtCuenta.Text, txtClave.Text))
-            {
-                frmUsuario frm = new frmUsuario();
-                frm.ShowDialog();
-            }
-            //MessageBox.Show("OK");
-            else
-                MessageBox.Show("NO OK");
-        }
-
         private void frmLogin_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void BtnAceptar_Click(object sender, EventArgs e)
+        {
+           // if (_objUsuario.AutenticarUsuario(txtCuenta.Text, txtClave.Text))
+              if (_objUsuarioC.Login(txtCuenta.Text, txtClave.Text))
+               {
+                   frmUsuario frm = new frmUsuario();
+                   frm.ShowDialog();
+               
+            MessageBox.Show("OK");
+            }
+            else
+                   MessageBox.Show("NO OK");
+        //frmPrincipal frmP = new frmPrincipal();
+        //frmP.Show();
+    }
+
+        private void BtnCancelar_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

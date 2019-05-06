@@ -10,6 +10,7 @@ namespace taxidriver
     {
         /// <summary>
         /// The main entry point for the application.
+	/// Group Git
         /// </summary>
         [STAThread]
         static void Main()

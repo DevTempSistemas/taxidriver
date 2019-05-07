@@ -32,15 +32,20 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Bunifu_UI_v1.5.3">
+      <HintPath>..\Bunifu_UI_v1.5.3.dll</HintPath>
+    </Reference>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
     </Reference>
     <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
+    <Reference Include="Microsoft.VisualBasic" />
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Management" />
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Security" />
     <Reference Include="System.Xml.Linq" />
@@ -81,25 +86,124 @@
     <Compile Include="Data\Usuario.cs">
       <DependentUpon>ModelTaxi.tt</DependentUpon>
     </Compile>
+    <Compile Include="Presentacion\frmHijos\frmHChofer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentacion\frmHijos\frmHChofer.Designer.cs">
+      <DependentUpon>frmHChofer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Presentacion\frmHijos\frmHCliente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentacion\frmHijos\frmHCliente.Designer.cs">
+      <DependentUpon>frmHCliente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Presentacion\frmHijos\frmHEventual.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentacion\frmHijos\frmHEventual.Designer.cs">
+      <DependentUpon>frmHEventual.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Presentacion\frmHijos\frmHUsuario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentacion\frmHijos\frmHUsuario.Designer.cs">
+      <DependentUpon>frmHUsuario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Presentacion\frmHijos\frmHVehiculos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentacion\frmHijos\frmHVehiculos.Designer.cs">
+      <DependentUpon>frmHVehiculos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Presentacion\frmHijos\frmRegistrarServicio.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentacion\frmHijos\frmRegistrarServicio.Designer.cs">
+      <DependentUpon>frmRegistrarServicio.cs</DependentUpon>
+    </Compile>
     <Compile Include="Presentacion\frmLogin.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Presentacion\frmLogin.Designer.cs">
       <DependentUpon>frmLogin.cs</DependentUpon>
     </Compile>
-    <Compile Include="Presentacion\frmUsuario.cs">
+    <Compile Include="Presentacion\frmPadres\frmInicio.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Presentacion\frmUsuario.Designer.cs">
+    <Compile Include="Presentacion\frmPadres\frmInicio.Designer.cs">
+      <DependentUpon>frmInicio.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Presentacion\frmPadres\frmPGestionar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentacion\frmPadres\frmPGestionar.Designer.cs">
+      <DependentUpon>frmPGestionar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Presentacion\frmPadres\frmPMensaje.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentacion\frmPadres\frmPMensaje.Designer.cs">
+      <DependentUpon>frmPMensaje.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Presentacion\frmPadres\frmPrincipal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentacion\frmPadres\frmPrincipal.Designer.cs">
+      <DependentUpon>frmPrincipal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Presentacion\frmExtras\frmUsuario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentacion\frmExtras\frmUsuario.Designer.cs">
       <DependentUpon>frmUsuario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Presentacion\frmPadres\frmPTitulo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentacion\frmPadres\frmPTitulo.Designer.cs">
+      <DependentUpon>frmPTitulo.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Presentacion\frmHijos\frmHChofer.resx">
+      <DependentUpon>frmHChofer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentacion\frmHijos\frmHCliente.resx">
+      <DependentUpon>frmHCliente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentacion\frmHijos\frmHEventual.resx">
+      <DependentUpon>frmHEventual.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentacion\frmHijos\frmHUsuario.resx">
+      <DependentUpon>frmHUsuario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentacion\frmHijos\frmHVehiculos.resx">
+      <DependentUpon>frmHVehiculos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentacion\frmHijos\frmRegistrarServicio.resx">
+      <DependentUpon>frmRegistrarServicio.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Presentacion\frmLogin.resx">
       <DependentUpon>frmLogin.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Presentacion\frmUsuario.resx">
+    <EmbeddedResource Include="Presentacion\frmExtras\frmUsuario.resx">
       <DependentUpon>frmUsuario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentacion\frmPadres\frmInicio.resx">
+      <DependentUpon>frmInicio.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentacion\frmPadres\frmPGestionar.resx">
+      <DependentUpon>frmPGestionar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentacion\frmPadres\frmPMensaje.resx">
+      <DependentUpon>frmPMensaje.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentacion\frmPadres\frmPrincipal.resx">
+      <DependentUpon>frmPrincipal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentacion\frmPadres\frmPTitulo.resx">
+      <DependentUpon>frmPTitulo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -109,6 +213,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="Data\dsTaxi.xsc">
       <DependentUpon>dsTaxi.xsd</DependentUpon>
@@ -156,9 +261,35 @@
       <DependentUpon>ModelTaxi.edmx</DependentUpon>
       <LastGenOutput>ModelTaxi.cs</LastGenOutput>
     </Content>
+    <Content Include="Resources\20190402_093125.jpg" />
+    <Content Include="Resources\delete.png" />
+    <Content Include="Resources\edit.png" />
+    <Content Include="Resources\fondo.jpg" />
+    <Content Include="Resources\icon cerrar2.png" />
+    <Content Include="Resources\icon maximizar.png" />
+    <Content Include="Resources\icon maximizar1.png" />
+    <Content Include="Resources\icon minimizar.png" />
+    <Content Include="Resources\icon restaurar.png" />
+    <Content Include="Resources\icon restaurar1.png" />
+    <Content Include="Resources\icons8-edit-48.png" />
+    <Content Include="Resources\lock.png" />
+    <Content Include="Resources\man-user.png" />
+    <Content Include="Resources\Mobile-Menu-Icon.png" />
+    <Content Include="Resources\plus.png" />
+    <Content Include="Resources\psd-yellow-light-effect-flare-poster-background-heypik-98U4444.jpg" />
+    <Content Include="Resources\Screenshot_4.png" />
+    <Content Include="Resources\search.png" />
+    <Content Include="Resources\search_locate_find_6278.png" />
+    <Content Include="Resources\senalizacion.png" />
+    <Content Include="Resources\senalizacion1.png" />
+    <Content Include="Resources\señal.png" />
+    <Content Include="Resources\suave-nublado-es-degradado-pastel-fondo-cielo-abstracto-color-dulce_6529-1202.jpg" />
+    <Content Include="Resources\Taxi_Right_Yellow_26335.png" />
+    <Content Include="Resources\yellow-seamless-background-1438296376FOu.jpg" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

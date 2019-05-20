@@ -28,13 +28,12 @@ namespace taxidriver.Presentacion
 
         private void BtnAceptar_Click(object sender, EventArgs e)
         {
-           // if (_objUsuario.AutenticarUsuario(txtCuenta.Text, txtClave.Text))
-              if (_objUsuarioC.Login(txtCuenta.Text, txtClave.Text))
-               {
-                   frmUsuario frm = new frmUsuario();
-                   frm.ShowDialog();
-               
-            MessageBox.Show("OK");
+            int idRol = _objUsuarioC.Login(txtCuenta.Text, txtClave.Text);
+            if (idRol > 0)
+            {
+                this.Visible = false;
+                frmPrincipal frmP = new frmPrincipal(idRol);
+                frmP.Show();
             }
             else
                    MessageBox.Show("NO OK");

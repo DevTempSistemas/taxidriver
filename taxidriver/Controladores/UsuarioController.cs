@@ -13,6 +13,11 @@ namespace taxidriver.Controladores
 
         #region Metodos
 
+        public List<Usuario> Listar(string pBuscar)
+        {
+            return _db.Usuario.Where(x => x.Nombre.Contains(pBuscar) || x.Apellido.Contains(pBuscar)).ToList();
+        }
+
         public bool Insertar(Data.Usuario reg)
         {
             _db.Usuario.Add(reg);
@@ -20,21 +25,44 @@ namespace taxidriver.Controladores
             return true;
         }
 
-        public bool Login(string pUser, String pPass)
+        public bool Modificar(Data.Usuario reg)
+        {
+            _db.Entry(reg).State = System.Data.Entity.EntityState.Modified;
+            return _db.SaveChanges() > 0;
+        }
+
+        public bool Eliminar(string pParametro)
+        {
+            var reg = _db.Usuario.Where(x => x.Cuenta == pParametro).FirstOrDefault();
+            _db.Usuario.Remove(reg);
+            return _db.SaveChanges() > 0;
+        }
+
+        public int Login(string pUser, string pPass)
         {
             try
             {
                 var res = _db.Usuario.Where(x => x.Cuenta == pUser &&
                                 x.Clave == pPass).SingleOrDefault();
                 if (res != null)
-                    return true;
-                else
-                    return false;
+                {
+                    if (res.Rol.Contains("Administrador"))
+                        return 1;
+                    else
+                        return 2;
+                }
+
+                return 0;
             }
-            catch (Exception ex)
+            catch
             {
-                return false;
+                return 0;
             }
+        }
+
+        internal List<Usuario> BuscarPorPK(string pCuenta)
+        {
+            return _db.Usuario.Where(x => x.Cuenta == pCuenta).ToList();
         }
 
         #endregion

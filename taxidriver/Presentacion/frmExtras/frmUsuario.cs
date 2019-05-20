@@ -15,8 +15,19 @@ namespace taxidriver.Presentacion
     public partial class frmUsuario : Form
     {
         UsuarioController _objUsuario = new UsuarioController();
+        private string _cuenta;
+        private bool _esNuevo;
+
         public frmUsuario()
         {
+            _esNuevo = true;
+            InitializeComponent();
+        }
+
+        public frmUsuario(string pCuenta)
+        {
+            _cuenta = pCuenta;
+            _esNuevo = false;
             InitializeComponent();
         }
 
@@ -28,19 +39,48 @@ namespace taxidriver.Presentacion
         private void Guardar()
         {
             var reg = CargarDatos();
-            _objUsuario.Insertar(reg);
+            if (_esNuevo)
+            {
+                if (_objUsuario.Insertar(reg))
+                {
+                    MessageBox.Show("Insertado Correctamente");
+                    Close();
+                }
+            }
+            else
+            {
+                if (_objUsuario.Modificar(reg))
+                {
+                    MessageBox.Show("Modifcado Correctamente");
+                    Close();
+                }
+            }
         }
 
         private Usuario CargarDatos()
         {
             var reg = (Usuario)usuarioBindingSource.Current;
-            reg.FechaCreacion = fechaCreacionDateTimePicker.Value;
+            reg.FechaCreacion = DateTime.Now;
+            reg.Estado = "Activo";
             return reg;
         }
 
         private void frmUsuario_Load(object sender, EventArgs e)
         {
-            usuarioBindingSource.AddNew();
+            if (_esNuevo)
+            {
+                usuarioBindingSource.AddNew();
+                rolComboBox.SelectedIndex = 0;
+            }
+            else
+            {
+                usuarioBindingSource.DataSource = _objUsuario.BuscarPorPK(_cuenta);
+            }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Close();
         }
     }
 }

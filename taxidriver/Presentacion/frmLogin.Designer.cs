@@ -169,6 +169,7 @@
             this.txtClave.Name = "txtClave";
             this.txtClave.Size = new System.Drawing.Size(346, 26);
             this.txtClave.TabIndex = 39;
+            this.txtClave.Text = "*";
             this.txtClave.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             // 
             // txtCuenta

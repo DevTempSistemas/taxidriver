@@ -12,13 +12,14 @@ namespace taxidriver.Presentacion
 {
     public partial class frmPrincipal : Form
     {
-        public frmPrincipal()
+        int _idUsuarioLogueado;
+        public frmPrincipal(int pIdUser)
         {
             InitializeComponent();
             PanelMenuVertical.Width = 250;
-            int v = 1;  // si es v=2 es operador y v=1 es administrador
+            _idUsuarioLogueado = pIdUser;  // si es v=2 es operador y v=1 es administrador
             //SituarBotones(220, 50);
-            if (v == 1)
+            if (_idUsuarioLogueado == 1)
             {
                 MenuAdministrador(120);
             }

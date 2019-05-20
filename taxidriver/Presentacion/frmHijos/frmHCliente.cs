@@ -19,7 +19,7 @@ namespace taxidriver.Presentacion.frmHijos
 
         private void BtnResgistrarServicio_Click(object sender, EventArgs e)
         {
-            frmPrincipal frmP = new frmPrincipal();
+            frmPrincipal frmP = new frmPrincipal(0);
 
             Presentacion.frmHijos.frmHRegistrarServicio frmReg = new Presentacion.frmHijos.frmHRegistrarServicio();
             frmReg.BackColor = Color.Cornsilk;

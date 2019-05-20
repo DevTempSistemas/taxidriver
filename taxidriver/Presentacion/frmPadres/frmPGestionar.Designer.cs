@@ -28,18 +28,15 @@
         /// </summary>
         private void InitializeComponent()
         {
-            
-
-
-        System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmPGestionar));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmPGestionar));
             this.txtBusqueda = new System.Windows.Forms.TextBox();
-            this.dgvDatos = new System.Windows.Forms.DataGridView();
             this.pbxImagenBusqueda = new System.Windows.Forms.PictureBox();
             this.btnBorrar = new Bunifu.Framework.UI.BunifuTileButton();
             this.btnNuevo = new Bunifu.Framework.UI.BunifuTileButton();
             this.btnEditar = new Bunifu.Framework.UI.BunifuTileButton();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvDatos)).BeginInit();
+            this.dgvGrilla = new System.Windows.Forms.DataGridView();
             ((System.ComponentModel.ISupportInitialize)(this.pbxImagenBusqueda)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvGrilla)).BeginInit();
             this.SuspendLayout();
             // 
             // txtBusqueda
@@ -51,16 +48,6 @@
             this.txtBusqueda.Name = "txtBusqueda";
             this.txtBusqueda.Size = new System.Drawing.Size(615, 26);
             this.txtBusqueda.TabIndex = 13;
-            // 
-            // dgvDatos
-            // 
-            this.dgvDatos.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.dgvDatos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvDatos.Location = new System.Drawing.Point(87, 209);
-            this.dgvDatos.Name = "dgvDatos";
-            this.dgvDatos.Size = new System.Drawing.Size(672, 241);
-            this.dgvDatos.TabIndex = 12;
             // 
             // pbxImagenBusqueda
             // 
@@ -130,28 +117,36 @@
             this.btnEditar.Size = new System.Drawing.Size(73, 88);
             this.btnEditar.TabIndex = 20;
             // 
+            // dgvGrilla
+            // 
+            this.dgvGrilla.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvGrilla.Location = new System.Drawing.Point(82, 202);
+            this.dgvGrilla.Name = "dgvGrilla";
+            this.dgvGrilla.Size = new System.Drawing.Size(668, 241);
+            this.dgvGrilla.TabIndex = 23;
+            // 
             // frmPGestionar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(150)))));
             this.ClientSize = new System.Drawing.Size(840, 600);
+            this.Controls.Add(this.dgvGrilla);
             this.Controls.Add(this.btnBorrar);
             this.Controls.Add(this.btnNuevo);
             this.Controls.Add(this.btnEditar);
             this.Controls.Add(this.txtBusqueda);
-            this.Controls.Add(this.dgvDatos);
             this.Controls.Add(this.pbxImagenBusqueda);
             this.Name = "frmPGestionar";
             this.Text = "frmPGestionar";
             this.Controls.SetChildIndex(this.pbxImagenBusqueda, 0);
-            this.Controls.SetChildIndex(this.dgvDatos, 0);
             this.Controls.SetChildIndex(this.txtBusqueda, 0);
             this.Controls.SetChildIndex(this.btnEditar, 0);
             this.Controls.SetChildIndex(this.btnNuevo, 0);
             this.Controls.SetChildIndex(this.btnBorrar, 0);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvDatos)).EndInit();
+            this.Controls.SetChildIndex(this.dgvGrilla, 0);
             ((System.ComponentModel.ISupportInitialize)(this.pbxImagenBusqueda)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvGrilla)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -159,11 +154,10 @@
 
         #endregion
         public System.Windows.Forms.TextBox txtBusqueda;
-        public System.Windows.Forms.DataGridView dgvDatos;
         public System.Windows.Forms.PictureBox pbxImagenBusqueda;
         public Bunifu.Framework.UI.BunifuTileButton btnBorrar;
         public Bunifu.Framework.UI.BunifuTileButton btnNuevo;
         public Bunifu.Framework.UI.BunifuTileButton btnEditar;
-
+        public System.Windows.Forms.DataGridView dgvGrilla;
     }
 }

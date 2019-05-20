@@ -4,7 +4,18 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="dbtaxiModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="dbtaxiModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Chofer">
+          <Key>
+            <PropertyRef Name="NroLicencia" />
+          </Key>
+          <Property Name="NroLicencia" Type="nvarchar" MaxLength="10" Nullable="false" />
+          <Property Name="Categoria" Type="varchar" MaxLength="1" />
+          <Property Name="Nombre" Type="nvarchar" MaxLength="20" />
+          <Property Name="Apellido" Type="nvarchar" MaxLength="20" />
+          <Property Name="Direccion" Type="nvarchar" MaxLength="100" />
+          <Property Name="Celular" Type="int" />
+        </EntityType>
         <EntityType Name="Usuario">
           <Key>
             <PropertyRef Name="Cuenta" />
@@ -17,11 +28,41 @@
           <Property Name="Estado" Type="varchar" MaxLength="10" Nullable="false" />
           <Property Name="FechaCreacion" Type="date" />
         </EntityType>
+        <EntityType Name="Vehiculo">
+          <Key>
+            <PropertyRef Name="Placa" />
+          </Key>
+          <Property Name="Placa" Type="nvarchar" MaxLength="10" Nullable="false" />
+          <Property Name="TipoVehiculo" Type="nvarchar" MaxLength="50" />
+          <Property Name="Marca" Type="nvarchar" MaxLength="20" />
+          <Property Name="Modelo" Type="int" />
+          <Property Name="CantidadPasajeros" Type="int" />
+          <Property Name="FkChofer" Type="nvarchar" MaxLength="10" />
+        </EntityType>
+        <Association Name="FK_Vehiculo_Chofer">
+          <End Role="Chofer" Type="Self.Chofer" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Vehiculo" Type="Self.Vehiculo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Chofer">
+              <PropertyRef Name="NroLicencia" />
+            </Principal>
+            <Dependent Role="Vehiculo">
+              <PropertyRef Name="FkChofer" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <EntityContainer Name="dbtaxiModelStoreContainer">
+          <EntitySet Name="Chofer" EntityType="Self.Chofer" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Usuario" EntityType="Self.Usuario" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Vehiculo" EntityType="Self.Vehiculo" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_Vehiculo_Chofer" Association="Self.FK_Vehiculo_Chofer">
+            <End Role="Chofer" EntitySet="Chofer" />
+            <End Role="Vehiculo" EntitySet="Vehiculo" />
+          </AssociationSet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="dbtaxiModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -39,7 +80,51 @@
         </EntityType>
         <EntityContainer Name="dbtaxiEntities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="Usuario" EntityType="Self.Usuario" />
+          <EntitySet Name="Chofer" EntityType="dbtaxiModel.Chofer" />
+          <EntitySet Name="Vehiculo" EntityType="dbtaxiModel.Vehiculo" />
+          <AssociationSet Name="FK_Vehiculo_Chofer" Association="dbtaxiModel.FK_Vehiculo_Chofer">
+            <End Role="Chofer" EntitySet="Chofer" />
+            <End Role="Vehiculo" EntitySet="Vehiculo" />
+          </AssociationSet>
         </EntityContainer>
+        <EntityType Name="Chofer">
+          <Key>
+            <PropertyRef Name="NroLicencia" />
+          </Key>
+          <Property Name="NroLicencia" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="Categoria" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Name="Nombre" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="Apellido" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="Direccion" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Celular" Type="Int32" />
+          <NavigationProperty Name="Vehiculo" Relationship="dbtaxiModel.FK_Vehiculo_Chofer" FromRole="Chofer" ToRole="Vehiculo" />
+        </EntityType>
+        <EntityType Name="Vehiculo">
+          <Key>
+            <PropertyRef Name="Placa" />
+          </Key>
+          <Property Name="Placa" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="TipoVehiculo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Marca" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="Modelo" Type="Int32" />
+          <Property Name="CantidadPasajeros" Type="Int32" />
+          <Property Name="FkChofer" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Chofer" Relationship="dbtaxiModel.FK_Vehiculo_Chofer" FromRole="Vehiculo" ToRole="Chofer" />
+        </EntityType>
+        <Association Name="FK_Vehiculo_Chofer">
+          <End Type="dbtaxiModel.Chofer" Role="Chofer" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Type="dbtaxiModel.Vehiculo" Role="Vehiculo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Chofer">
+              <PropertyRef Name="NroLicencia" />
+            </Principal>
+            <Dependent Role="Vehiculo">
+              <PropertyRef Name="FkChofer" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -56,6 +141,30 @@
                 <ScalarProperty Name="Rol" ColumnName="Rol" />
                 <ScalarProperty Name="Estado" ColumnName="Estado" />
                 <ScalarProperty Name="FechaCreacion" ColumnName="FechaCreacion" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Chofer">
+            <EntityTypeMapping TypeName="dbtaxiModel.Chofer">
+              <MappingFragment StoreEntitySet="Chofer">
+                <ScalarProperty Name="Celular" ColumnName="Celular" />
+                <ScalarProperty Name="Direccion" ColumnName="Direccion" />
+                <ScalarProperty Name="Apellido" ColumnName="Apellido" />
+                <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+                <ScalarProperty Name="Categoria" ColumnName="Categoria" />
+                <ScalarProperty Name="NroLicencia" ColumnName="NroLicencia" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Vehiculo">
+            <EntityTypeMapping TypeName="dbtaxiModel.Vehiculo">
+              <MappingFragment StoreEntitySet="Vehiculo">
+                <ScalarProperty Name="FkChofer" ColumnName="FkChofer" />
+                <ScalarProperty Name="CantidadPasajeros" ColumnName="CantidadPasajeros" />
+                <ScalarProperty Name="Modelo" ColumnName="Modelo" />
+                <ScalarProperty Name="Marca" ColumnName="Marca" />
+                <ScalarProperty Name="TipoVehiculo" ColumnName="TipoVehiculo" />
+                <ScalarProperty Name="Placa" ColumnName="Placa" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

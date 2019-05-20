@@ -6,6 +6,9 @@
     <edmx:Diagrams>
       <Diagram DiagramId="33ddcbaa149d4fd987208f99912312c5" Name="Diagram1">
         <EntityTypeShape EntityType="dbtaxiModel.Usuario" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="dbtaxiModel.Chofer" Width="1.5" PointX="3.375" PointY="1" />
+        <EntityTypeShape EntityType="dbtaxiModel.Vehiculo" Width="1.5" PointX="5.625" PointY="1" />
+        <AssociationConnector Association="dbtaxiModel.FK_Vehiculo_Chofer" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

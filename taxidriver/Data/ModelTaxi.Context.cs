@@ -26,5 +26,7 @@ namespace taxidriver.Data
         }
     
         public virtual DbSet<Usuario> Usuario { get; set; }
+        public virtual DbSet<Chofer> Chofer { get; set; }
+        public virtual DbSet<Vehiculo> Vehiculo { get; set; }
     }
 }

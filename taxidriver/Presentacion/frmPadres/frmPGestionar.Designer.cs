@@ -34,9 +34,7 @@
             this.btnBorrar = new Bunifu.Framework.UI.BunifuTileButton();
             this.btnNuevo = new Bunifu.Framework.UI.BunifuTileButton();
             this.btnEditar = new Bunifu.Framework.UI.BunifuTileButton();
-            this.dgvGrilla = new System.Windows.Forms.DataGridView();
             ((System.ComponentModel.ISupportInitialize)(this.pbxImagenBusqueda)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvGrilla)).BeginInit();
             this.SuspendLayout();
             // 
             // txtBusqueda
@@ -44,15 +42,15 @@
             this.txtBusqueda.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.txtBusqueda.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtBusqueda.Location = new System.Drawing.Point(135, 158);
+            this.txtBusqueda.Location = new System.Drawing.Point(59, 180);
             this.txtBusqueda.Name = "txtBusqueda";
-            this.txtBusqueda.Size = new System.Drawing.Size(615, 26);
+            this.txtBusqueda.Size = new System.Drawing.Size(769, 26);
             this.txtBusqueda.TabIndex = 13;
             // 
             // pbxImagenBusqueda
             // 
             this.pbxImagenBusqueda.Image = ((System.Drawing.Image)(resources.GetObject("pbxImagenBusqueda.Image")));
-            this.pbxImagenBusqueda.Location = new System.Drawing.Point(82, 150);
+            this.pbxImagenBusqueda.Location = new System.Drawing.Point(6, 172);
             this.pbxImagenBusqueda.Name = "pbxImagenBusqueda";
             this.pbxImagenBusqueda.Size = new System.Drawing.Size(47, 46);
             this.pbxImagenBusqueda.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -72,7 +70,7 @@
             this.btnBorrar.ImageZoom = 65;
             this.btnBorrar.LabelPosition = 34;
             this.btnBorrar.LabelText = "BORRAR";
-            this.btnBorrar.Location = new System.Drawing.Point(290, 468);
+            this.btnBorrar.Location = new System.Drawing.Point(178, 75);
             this.btnBorrar.Margin = new System.Windows.Forms.Padding(5);
             this.btnBorrar.Name = "btnBorrar";
             this.btnBorrar.Size = new System.Drawing.Size(73, 88);
@@ -91,7 +89,7 @@
             this.btnNuevo.ImageZoom = 65;
             this.btnNuevo.LabelPosition = 34;
             this.btnNuevo.LabelText = "NUEVO";
-            this.btnNuevo.Location = new System.Drawing.Point(455, 468);
+            this.btnNuevo.Location = new System.Drawing.Point(14, 75);
             this.btnNuevo.Margin = new System.Windows.Forms.Padding(5);
             this.btnNuevo.Name = "btnNuevo";
             this.btnNuevo.Size = new System.Drawing.Size(73, 88);
@@ -111,19 +109,11 @@
             this.btnEditar.ImageZoom = 65;
             this.btnEditar.LabelPosition = 34;
             this.btnEditar.LabelText = "EDITAR";
-            this.btnEditar.Location = new System.Drawing.Point(113, 468);
+            this.btnEditar.Location = new System.Drawing.Point(95, 75);
             this.btnEditar.Margin = new System.Windows.Forms.Padding(5);
             this.btnEditar.Name = "btnEditar";
             this.btnEditar.Size = new System.Drawing.Size(73, 88);
             this.btnEditar.TabIndex = 20;
-            // 
-            // dgvGrilla
-            // 
-            this.dgvGrilla.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvGrilla.Location = new System.Drawing.Point(82, 202);
-            this.dgvGrilla.Name = "dgvGrilla";
-            this.dgvGrilla.Size = new System.Drawing.Size(668, 241);
-            this.dgvGrilla.TabIndex = 23;
             // 
             // frmPGestionar
             // 
@@ -131,7 +121,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(150)))));
             this.ClientSize = new System.Drawing.Size(840, 600);
-            this.Controls.Add(this.dgvGrilla);
             this.Controls.Add(this.btnBorrar);
             this.Controls.Add(this.btnNuevo);
             this.Controls.Add(this.btnEditar);
@@ -144,9 +133,7 @@
             this.Controls.SetChildIndex(this.btnEditar, 0);
             this.Controls.SetChildIndex(this.btnNuevo, 0);
             this.Controls.SetChildIndex(this.btnBorrar, 0);
-            this.Controls.SetChildIndex(this.dgvGrilla, 0);
             ((System.ComponentModel.ISupportInitialize)(this.pbxImagenBusqueda)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvGrilla)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -158,6 +145,5 @@
         public Bunifu.Framework.UI.BunifuTileButton btnBorrar;
         public Bunifu.Framework.UI.BunifuTileButton btnNuevo;
         public Bunifu.Framework.UI.BunifuTileButton btnEditar;
-        public System.Windows.Forms.DataGridView dgvGrilla;
     }
 }

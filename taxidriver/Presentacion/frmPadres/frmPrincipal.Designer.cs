@@ -256,6 +256,7 @@
             this.PanelTipoPasajero.Name = "PanelTipoPasajero";
             this.PanelTipoPasajero.Size = new System.Drawing.Size(250, 80);
             this.PanelTipoPasajero.TabIndex = 11;
+            this.PanelTipoPasajero.Visible = false;
             // 
             // btnEventual
             // 

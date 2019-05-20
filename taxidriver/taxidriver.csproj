@@ -59,7 +59,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controladores\ChoferController.cs" />
     <Compile Include="Controladores\UsuarioController.cs" />
+    <Compile Include="Controladores\VehiculoController.cs" />
+    <Compile Include="Data\Chofer.cs">
+      <DependentUpon>ModelTaxi.tt</DependentUpon>
+    </Compile>
     <Compile Include="Data\dsTaxi.cs">
       <DependentUpon>dsTaxi.xsd</DependentUpon>
     </Compile>
@@ -84,6 +89,9 @@
       <DependentUpon>ModelTaxi.edmx</DependentUpon>
     </Compile>
     <Compile Include="Data\Usuario.cs">
+      <DependentUpon>ModelTaxi.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\Vehiculo.cs">
       <DependentUpon>ModelTaxi.tt</DependentUpon>
     </Compile>
     <Compile Include="Presentacion\frmHijos\frmHChofer.cs">
@@ -121,6 +129,12 @@
     </Compile>
     <Compile Include="Presentacion\frmHijos\frmRegistrarServicio.Designer.cs">
       <DependentUpon>frmRegistrarServicio.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Presentacion\frmHijos\frmVehiculoDetalle.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentacion\frmHijos\frmVehiculoDetalle.Designer.cs">
+      <DependentUpon>frmVehiculoDetalle.cs</DependentUpon>
     </Compile>
     <Compile Include="Presentacion\frmLogin.cs">
       <SubType>Form</SubType>
@@ -184,6 +198,9 @@
     <EmbeddedResource Include="Presentacion\frmHijos\frmRegistrarServicio.resx">
       <DependentUpon>frmRegistrarServicio.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Presentacion\frmHijos\frmVehiculoDetalle.resx">
+      <DependentUpon>frmVehiculoDetalle.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Presentacion\frmLogin.resx">
       <DependentUpon>frmLogin.cs</DependentUpon>
     </EmbeddedResource>
@@ -234,7 +251,9 @@
       <DependentUpon>ModelTaxi.edmx</DependentUpon>
     </None>
     <None Include="packages.config" />
+    <None Include="Properties\DataSources\taxidriver.Data.Chofer.datasource" />
     <None Include="Properties\DataSources\taxidriver.Data.Usuario.datasource" />
+    <None Include="Properties\DataSources\taxidriver.Data.Vehiculo.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

@@ -67,7 +67,7 @@ namespace taxidriver.Presentacion
         
         private void BtnServicios_Click(object sender, EventArgs e)
         {
-            AbrirFormInPanel(new Presentacion.frmHijos.frmHRegistrarServicio());
+            AbrirFormInPanel(new Presentacion.frmHijos.frmHChofer());
         }
 
         private void BtnPasajero_Click(object sender, EventArgs e)

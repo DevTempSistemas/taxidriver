@@ -31,17 +31,17 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmPrincipal));
             this.PanelPrincipal = new System.Windows.Forms.TableLayoutPanel();
             this.PanelEncabezado = new System.Windows.Forms.Panel();
+            this.btnMaximizar = new System.Windows.Forms.Button();
+            this.PanelMenuVertical = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
+            this.PanelTipoPasajero = new System.Windows.Forms.Panel();
             this.btnRestaurar = new System.Windows.Forms.Button();
             this.btnMinimizar = new System.Windows.Forms.Button();
             this.btnCerrar = new System.Windows.Forms.Button();
-            this.btnMaximizar = new System.Windows.Forms.Button();
             this.pbxrecorrer = new System.Windows.Forms.PictureBox();
-            this.PanelMenuVertical = new System.Windows.Forms.Panel();
             this.btnUsuarios = new System.Windows.Forms.Button();
             this.btnVehiculos = new System.Windows.Forms.Button();
             this.btnChofer = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
-            this.PanelTipoPasajero = new System.Windows.Forms.Panel();
             this.btnEventual = new System.Windows.Forms.Button();
             this.btnCliente = new System.Windows.Forms.Button();
             this.btnPasajero = new System.Windows.Forms.Button();
@@ -50,9 +50,9 @@
             this.btnServicios = new System.Windows.Forms.Button();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.PanelEncabezado.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pbxrecorrer)).BeginInit();
             this.PanelMenuVertical.SuspendLayout();
             this.PanelTipoPasajero.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxrecorrer)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.SuspendLayout();
@@ -87,6 +87,63 @@
             this.PanelEncabezado.Size = new System.Drawing.Size(850, 30);
             this.PanelEncabezado.TabIndex = 13;
             this.PanelEncabezado.MouseDown += new System.Windows.Forms.MouseEventHandler(this.PanelEncabezado_MouseDown);
+            // 
+            // btnMaximizar
+            // 
+            this.btnMaximizar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnMaximizar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnMaximizar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnMaximizar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.PaleGreen;
+            this.btnMaximizar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.PaleGreen;
+            this.btnMaximizar.Location = new System.Drawing.Point(798, 4);
+            this.btnMaximizar.Name = "btnMaximizar";
+            this.btnMaximizar.Size = new System.Drawing.Size(20, 20);
+            this.btnMaximizar.TabIndex = 50;
+            this.btnMaximizar.TabStop = false;
+            this.btnMaximizar.UseVisualStyleBackColor = true;
+            // 
+            // PanelMenuVertical
+            // 
+            this.PanelMenuVertical.BackColor = System.Drawing.Color.Gold;
+            this.PanelMenuVertical.Controls.Add(this.btnUsuarios);
+            this.PanelMenuVertical.Controls.Add(this.btnVehiculos);
+            this.PanelMenuVertical.Controls.Add(this.btnChofer);
+            this.PanelMenuVertical.Controls.Add(this.label1);
+            this.PanelMenuVertical.Controls.Add(this.PanelTipoPasajero);
+            this.PanelMenuVertical.Controls.Add(this.btnPasajero);
+            this.PanelMenuVertical.Controls.Add(this.btnCerrarSesion);
+            this.PanelMenuVertical.Controls.Add(this.pictureBox4);
+            this.PanelMenuVertical.Controls.Add(this.btnServicios);
+            this.PanelMenuVertical.Controls.Add(this.pictureBox3);
+            this.PanelMenuVertical.Cursor = System.Windows.Forms.Cursors.Default;
+            this.PanelMenuVertical.Dock = System.Windows.Forms.DockStyle.Left;
+            this.PanelMenuVertical.Location = new System.Drawing.Point(0, 0);
+            this.PanelMenuVertical.Name = "PanelMenuVertical";
+            this.PanelMenuVertical.Size = new System.Drawing.Size(250, 650);
+            this.PanelMenuVertical.TabIndex = 12;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(90, 12);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(77, 50);
+            this.label1.TabIndex = 12;
+            this.label1.Text = "RADIO\r\nTAXI";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // PanelTipoPasajero
+            // 
+            this.PanelTipoPasajero.BackColor = System.Drawing.Color.Gold;
+            this.PanelTipoPasajero.Controls.Add(this.btnEventual);
+            this.PanelTipoPasajero.Controls.Add(this.btnCliente);
+            this.PanelTipoPasajero.Location = new System.Drawing.Point(0, 209);
+            this.PanelTipoPasajero.Name = "PanelTipoPasajero";
+            this.PanelTipoPasajero.Size = new System.Drawing.Size(250, 80);
+            this.PanelTipoPasajero.TabIndex = 11;
+            this.PanelTipoPasajero.Visible = false;
             // 
             // btnRestaurar
             // 
@@ -137,20 +194,6 @@
             this.btnCerrar.UseVisualStyleBackColor = true;
             this.btnCerrar.Click += new System.EventHandler(this.BtnCerrar_Click);
             // 
-            // btnMaximizar
-            // 
-            this.btnMaximizar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnMaximizar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnMaximizar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnMaximizar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.PaleGreen;
-            this.btnMaximizar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.PaleGreen;
-            this.btnMaximizar.Location = new System.Drawing.Point(798, 4);
-            this.btnMaximizar.Name = "btnMaximizar";
-            this.btnMaximizar.Size = new System.Drawing.Size(20, 20);
-            this.btnMaximizar.TabIndex = 50;
-            this.btnMaximizar.TabStop = false;
-            this.btnMaximizar.UseVisualStyleBackColor = true;
-            // 
             // pbxrecorrer
             // 
             this.pbxrecorrer.BackColor = System.Drawing.Color.Transparent;
@@ -162,26 +205,6 @@
             this.pbxrecorrer.TabIndex = 0;
             this.pbxrecorrer.TabStop = false;
             this.pbxrecorrer.Click += new System.EventHandler(this.Pbxrecorrer_Click);
-            // 
-            // PanelMenuVertical
-            // 
-            this.PanelMenuVertical.BackColor = System.Drawing.Color.Gold;
-            this.PanelMenuVertical.Controls.Add(this.btnUsuarios);
-            this.PanelMenuVertical.Controls.Add(this.btnVehiculos);
-            this.PanelMenuVertical.Controls.Add(this.btnChofer);
-            this.PanelMenuVertical.Controls.Add(this.label1);
-            this.PanelMenuVertical.Controls.Add(this.PanelTipoPasajero);
-            this.PanelMenuVertical.Controls.Add(this.btnPasajero);
-            this.PanelMenuVertical.Controls.Add(this.btnCerrarSesion);
-            this.PanelMenuVertical.Controls.Add(this.pictureBox4);
-            this.PanelMenuVertical.Controls.Add(this.btnServicios);
-            this.PanelMenuVertical.Controls.Add(this.pictureBox3);
-            this.PanelMenuVertical.Cursor = System.Windows.Forms.Cursors.Default;
-            this.PanelMenuVertical.Dock = System.Windows.Forms.DockStyle.Left;
-            this.PanelMenuVertical.Location = new System.Drawing.Point(0, 0);
-            this.PanelMenuVertical.Name = "PanelMenuVertical";
-            this.PanelMenuVertical.Size = new System.Drawing.Size(250, 650);
-            this.PanelMenuVertical.TabIndex = 12;
             // 
             // btnUsuarios
             // 
@@ -232,31 +255,7 @@
             this.btnChofer.TabIndex = 8;
             this.btnChofer.Text = "Chofer";
             this.btnChofer.UseVisualStyleBackColor = true;
-            this.btnChofer.Visible = false;
             this.btnChofer.Click += new System.EventHandler(this.BtnChofer_Click);
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(90, 12);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(77, 50);
-            this.label1.TabIndex = 12;
-            this.label1.Text = "RADIO\r\nTAXI";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // PanelTipoPasajero
-            // 
-            this.PanelTipoPasajero.BackColor = System.Drawing.Color.Gold;
-            this.PanelTipoPasajero.Controls.Add(this.btnEventual);
-            this.PanelTipoPasajero.Controls.Add(this.btnCliente);
-            this.PanelTipoPasajero.Location = new System.Drawing.Point(0, 209);
-            this.PanelTipoPasajero.Name = "PanelTipoPasajero";
-            this.PanelTipoPasajero.Size = new System.Drawing.Size(250, 80);
-            this.PanelTipoPasajero.TabIndex = 11;
-            this.PanelTipoPasajero.Visible = false;
             // 
             // btnEventual
             // 
@@ -381,10 +380,10 @@
             this.Text = "frmPrincipal";
             this.Load += new System.EventHandler(this.FrmPrincipal_Load);
             this.PanelEncabezado.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pbxrecorrer)).EndInit();
             this.PanelMenuVertical.ResumeLayout(false);
             this.PanelMenuVertical.PerformLayout();
             this.PanelTipoPasajero.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pbxrecorrer)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             this.ResumeLayout(false);

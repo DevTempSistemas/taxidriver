@@ -16,12 +16,14 @@ namespace taxidriver.Presentacion
         public frmPrincipal(int pIdUser)
         {
             InitializeComponent();
+            
             PanelMenuVertical.Width = 250;
             _idUsuarioLogueado = pIdUser;  // si es v=2 es operador y v=1 es administrador
             //SituarBotones(220, 50);
             if (_idUsuarioLogueado == 1)
             {
                 MenuAdministrador(120);
+                
             }
             else
             {
@@ -77,11 +79,12 @@ namespace taxidriver.Presentacion
                 PanelTipoPasajero.Height = 0;
                 //btnCerrarSesion.Location = new Point(3, 220);
                 SituarBotones(220);
+                PanelTipoPasajero.Visible = true;
             }
             else
             {
                 PanelTipoPasajero.Height = 80;
-
+                //PanelTipoPasajero.Visible = false;
                 SituarBotones(290);
             }
         }
